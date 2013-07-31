@@ -23,7 +23,8 @@ License: GPLv2 or later
 		if ( 'revision' == get_current_screen()->id ) {			
 			wp_enqueue_script( 'revisionsplus', plugins_url( 'js/revisionsplus.js' , __FILE__ ), array( 'jquery' ) );
 			wp_enqueue_style( 'revisionsplus', plugins_url( 'css/revisionsplus.css' , __FILE__ ) );
-			$_revisionsplus = array( 'easteregg' => plugins_url( 'revisionseasteregg.php' , __FILE__ ) );
+			$_revisionsplus = array( 
+				'easteregg' => plugins_url( 'revisionseasteregg.php' , __FILE__ ) );
 			wp_localize_script( 'revisionsplus', '_revisionsplus', $_revisionsplus );
 ?>
 	<div class="easteregg"><a href="#"><img src="<?php echo plugins_url( 'images/easteregg.png' , __FILE__ ) ?>" /></a></div>
