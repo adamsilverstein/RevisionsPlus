@@ -18,6 +18,7 @@ Extends the WordPress revisions system with the following options:
  * enable wysiwyg view
  * enable list of revisions on revision page
  * enable easter egg
+ * enable list of revisions meta box on post edit page
 
 == Installation ==
 

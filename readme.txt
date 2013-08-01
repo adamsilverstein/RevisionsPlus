@@ -1,12 +1,12 @@
 === Revisions Plus ===
+
 Contributors: adamsilverstein
-Donate link:
-Tags: admin revisions
-Requires at least: 3.6
-Tested up to: 3.6
-Stable tag: 0.9
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+-Tags: admin revisions
+-Requires at least: 3.6
+-Tested up to: 3.6
+-Stable tag: 0.9
+-License: GPLv2 or later
+-License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Extends the WordPress revisions system.
 
@@ -18,6 +18,7 @@ Extends the WordPress revisions system with the following options:
  * enable wysiwyg view
  * enable list of revisions on revision page
  * enable easter egg
+ * enable list of revisions meta box on post edit page
 
 == Installation ==
 

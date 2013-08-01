@@ -16,6 +16,7 @@ License: GPLv2 or later
 
 
 	function revisionsplus_admin_init() {
+		// TODO: only show revisions meta box if more than one revision
 		add_meta_box( 'revisionslistdiv', __( 'Revisions List' ), 'post_revisions_meta_box', 'post' );		
 	}
 
