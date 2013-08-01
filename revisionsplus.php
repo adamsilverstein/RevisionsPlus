@@ -9,7 +9,8 @@ Author URI: http://www.earthbound.com/plugins
 License: GPLv2 or later
 */
 
-	add_action( 'admin_footer', 'revisionsplus_admin_init' );
+	add_action( 'admin_init', 'revisionsplus_admin_init' );
+	add_filter( 'process_revision_diff_html', 'filter_process_revision_diff_html', 10, 2 );
 
 
 	function revisionsplus_admin_init() {
@@ -26,9 +27,12 @@ License: GPLv2 or later
 			$_revisionsplus = array( 
 				'easteregg' => plugins_url( 'revisionseasteregg.php' , __FILE__ ) );
 			wp_localize_script( 'revisionsplus', '_revisionsplus', $_revisionsplus );
+
+
+
+			// add the clickable easter egg
 ?>
 	<div class="easteregg"><a href="#"><img src="<?php echo plugins_url( 'images/easteregg.png' , __FILE__ ) ?>" /></a></div>
-
 <?php
 		//include( './js/revisions-js.php' );
 		//wp_redirect( 'post.php' );
@@ -36,5 +40,10 @@ License: GPLv2 or later
 
 		}
 
+	}
+
+	function filter_process_revision_diff_html( $org, $line ) {
+		error_log($line);
+		return wp_kses_post( $line );
 	}
 
