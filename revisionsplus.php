@@ -9,16 +9,23 @@ Author URI: http://www.earthbound.com/plugins
 License: GPLv2 or later
 */
 
+	add_action( 'admin_footer', 'revisionsplus_admin_footer' );
 	add_action( 'admin_init', 'revisionsplus_admin_init' );
 	add_filter( 'process_revision_diff_html', 'filter_process_revision_diff_html', 10, 2 );
+	add_filter( 'show_revisions_split_view', 'set_show_revisions_split_view', 10 );
 
 
 	function revisionsplus_admin_init() {
+		add_meta_box( 'revisionslistdiv', __( 'Revisions List' ), 'post_revisions_meta_box', 'post' );		
+	}
+
+	function revisionsplus_admin_footer() {
 		/*
-			* enable single column view
-			* enable wysiwyg view
+			* enable single column view.
+			* enable wysiwyg view.
 			* enable list of revisions on revision page
-			* enable easter egg
+			* enable easter egg. 
+			* add list of revisions to the edit post screen
 		 */
 		// Only load JS on revision screen
 		if ( 'revision' == get_current_screen()->id ) {			
@@ -43,7 +50,10 @@ License: GPLv2 or later
 	}
 
 	function filter_process_revision_diff_html( $org, $line ) {
-		error_log($line);
 		return wp_kses_post( $line );
+	}
+
+	function set_show_revisions_split_view() {
+		return false;
 	}
 
