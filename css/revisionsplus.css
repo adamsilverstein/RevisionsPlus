@@ -1,0 +1,17 @@
+.easteregg {
+	position: absolute;
+	bottom: 1px;
+	left: 10px;
+}
+
+.revisions.timeline .revisions-diff {
+	display: none;
+}
+
+.revisions.timeline .revisions-timeline {
+	display: inline;
+}
+
+.revisions .revisions-timeline {
+	display: none;
+}
