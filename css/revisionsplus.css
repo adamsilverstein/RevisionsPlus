@@ -2,6 +2,7 @@
 	position: absolute;
 	bottom: 1px;
 	left: 10px;
+<<<<<<< HEAD
 }
 
 .revisions.timeline .revisions-diff {
@@ -14,4 +15,6 @@
 
 .revisions .revisions-timeline {
 	display: none;
+=======
+>>>>>>> fb0b76000622b8d1487675fbaf1511dafc16ea4e
 }

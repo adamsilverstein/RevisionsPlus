@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 window.wp = window.wp || {};
 (function($) {
 	timelineMode = '<label><input class="show-revision-history" type="checkbox"></input> Show Revision Timeline</label>';
@@ -68,6 +69,11 @@ window.wp = window.wp || {};
 
 
 	$( '.easteregg a' ).on( 'click', function() {
+=======
+(function($) {
+	$( '.easteregg a' ).on( 'click', function() {
+		console.log( 'click' );
+>>>>>>> fb0b76000622b8d1487675fbaf1511dafc16ea4e
 		document.location = _revisionsplus.easteregg;
 	});
 }(jQuery));
