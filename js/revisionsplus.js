@@ -12,11 +12,11 @@ window.wp = window.wp || {};
 		<# }); #>
 		</div>
 		</script>';*/
- 
+
 	$(document).ready( function() {
-	var revisions;
+	var revisions, timeline;
 	revisions = window.wp.revisions;
-	
+
 	if ( 'undefined' !== typeof revisions) {
 		console.log( revisions );
 
@@ -29,7 +29,16 @@ window.wp = window.wp || {};
 			// Generate the options to be passed to the template.
 			render: function() {
 				console.log(this);
-				$( '.revisions-diff-frame' ).after( '<div class="revisions-timeline"> AHa!</div>' );
+				timeline = '<div class="revisions-timeline">';
+				_.each( this.revisions, function( revision ){
+					timeline = timeline + '<div id="' + esc_attr( revision->ID ) +'">' +
+					// snippet +
+					'</div>';
+
+				} );
+				$( '.revisions-diff-frame' ).after( timeline );
+
+				//</div>
 			}
 		});
 
@@ -42,7 +51,7 @@ window.wp = window.wp || {};
 	}
 		$( '.revision-toggle-compare-mode label' )
 			.before( timelineMode );
-		$( 'input.show-revision-history' )	
+		$( 'input.show-revision-history' )
 			.on( 'click',
 				function() {
 					if ( $( this ).attr( 'checked' ) ) {
@@ -50,20 +59,20 @@ window.wp = window.wp || {};
 					$( '.revisions' ).addClass( 'timeline' );
 
 					// Check the checkbox!
-					$( this ).attr( 'checked', true ); 
+					$( this ).attr( 'checked', true );
 				} else {
-				
+
 					// Show the normal view
 					$( '.revisions' ).removeClass( 'timeline' );
 
 					// Un-check the checkbox!
-					$( this ).attr( 'checked', false ); 
+					$( this ).attr( 'checked', false );
 
 				}
 		} );
 	});
 
-	
+
 
 
 
