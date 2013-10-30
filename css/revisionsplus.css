@@ -2,11 +2,6 @@
 	position: absolute;
 	bottom: 1px;
 	left: 10px;
-<<<<<<< HEAD
-}
-
-.revisions.timeline .revisions-diff {
-	display: none;
 }
 
 .revisions.timeline .revisions-timeline {
@@ -15,6 +10,22 @@
 
 .revisions .revisions-timeline {
 	display: none;
-=======
->>>>>>> fb0b76000622b8d1487675fbaf1511dafc16ea4e
+	position: absolute;
+	top: 166px;
+	right: 15px;
+	background-color: #fff;
+	padding: 10px;
+	font-size: 1.1em;
+	line-height: 150%;
+	min-width: 50px;
+}
+
+.revisions.pinned .revisions-timeline {
+	position: fixed;
+	top: 126px;
+}
+
+.revisions-timeline-title {
+	font-weight: bold;
+	font-size: 1.2em;
 }

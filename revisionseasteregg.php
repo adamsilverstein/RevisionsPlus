@@ -1,5 +1,5 @@
 <?php
-	require_once( '../../../wp-admin/admin.php' ); // Not certain this will always work ?
+require( '../../../wp-blog-header.php' );
 $offset = 0;
 $redirect='';
 	include( 'revisions-js.php' );
