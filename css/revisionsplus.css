@@ -1,7 +1,7 @@
 .easteregg {
 	position: absolute;
-	bottom: 1px;
-	left: 10px;
+	bottom: 7px;
+	left: 165px;
 }
 
 .revisions.timeline .revisions-timeline {
@@ -11,13 +11,17 @@
 .revisions .revisions-timeline {
 	display: none;
 	position: absolute;
-	top: 166px;
-	right: 15px;
+	top: 209px;
+	right: 18px;
 	background-color: #fff;
 	padding: 10px;
 	font-size: 1.1em;
 	line-height: 150%;
 	min-width: 50px;
+}
+
+.comparing-two-revisions.revisions .revisions-timeline {
+	top: 249px;
 }
 
 .revisions.pinned .revisions-timeline {

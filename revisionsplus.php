@@ -3,7 +3,7 @@
 Plugin Name: Revisions Plus
 Plugin URI: http://www.earthbound.com/plugins/revisions-plus
 Description: Extends the WordPress revisions system with additional features.
-Version: 0.9.1
+Version: 1.0.0
 Author: Adam Silverstein
 Author URI: http://www.earthbound.com/plugins
 License: GPLv2 or later
@@ -11,8 +11,11 @@ License: GPLv2 or later
 
 	add_action( 'admin_footer', 'revisionsplus_admin_footer' );
 	add_filter( 'process_text_diff_html', 'revisionsplus_filter_process_revision_diff_html', 10, 2 );
-	add_filter( 'show_revisions_split_view', '__return_false', 10 );
-
+//	add_filter( 'show_revisions_split_view', '__return_false', 10 );
+	add_filter( 'revision_text_diff_options', function( array $args ) {
+		$args['show_split_view'] = false;
+		return $args;
+	} );
 	//include_once( 'patched_core/revision.php' );
 	//include_once( 'patched_core/wp-diff.php' );
 
@@ -42,10 +45,12 @@ License: GPLv2 or later
 	<div class="easteregg"><a href="#"><img src="<?php echo plugins_url( 'images/easteregg.png' , __FILE__ ) ?>" /></a></div>
 <script type="text/javascript">
 	function gotoRevision( revisionID ) {
-		//console.log( revisionID );
-		window.wp.revisions.view.frame.model.router.handleRoute( revisionID-1, revisionID );
-		//window.wp.revisions.view.frame.trigger( 'change:from' );
-		//window.wp.revisions.view.frame.trigger( 'change:to' );
+
+		// Go to the revision.
+		window.wp.revisions.view.frame.model.set( {
+			to: window.wp.revisions.view.frame.model.revisions.get( revisionID ),
+			from: window.wp.revisions.view.frame.model.revisions.get( revisionID-1 )
+		} );
 	}
 
 </script>
