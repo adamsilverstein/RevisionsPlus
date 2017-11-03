@@ -11,8 +11,11 @@ License: GPLv2 or later
 
 	add_action( 'admin_footer', 'revisionsplus_admin_footer' );
 	add_filter( 'process_text_diff_html', 'revisionsplus_filter_process_revision_diff_html', 10, 2 );
-	add_filter( 'show_revisions_split_view', '__return_false', 10 );
-
+//	add_filter( 'show_revisions_split_view', '__return_false', 10 );
+	add_filter( 'revision_text_diff_options', function( array $args ) {
+		$args['show_split_view'] = false;
+		return $args;
+	} );
 	//include_once( 'patched_core/revision.php' );
 	//include_once( 'patched_core/wp-diff.php' );
 
