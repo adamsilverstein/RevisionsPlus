@@ -3,7 +3,7 @@
 Plugin Name: Revisions Plus
 Plugin URI: http://www.earthbound.com/plugins/revisions-plus
 Description: Extends the WordPress revisions system with additional features.
-Version: 0.9.1
+Version: 1.0.0
 Author: Adam Silverstein
 Author URI: http://www.earthbound.com/plugins
 License: GPLv2 or later
