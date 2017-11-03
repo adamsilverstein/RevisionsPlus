@@ -45,10 +45,12 @@ License: GPLv2 or later
 	<div class="easteregg"><a href="#"><img src="<?php echo plugins_url( 'images/easteregg.png' , __FILE__ ) ?>" /></a></div>
 <script type="text/javascript">
 	function gotoRevision( revisionID ) {
-		//console.log( revisionID );
-		window.wp.revisions.view.frame.model.router.handleRoute( revisionID-1, revisionID );
-		//window.wp.revisions.view.frame.trigger( 'change:from' );
-		//window.wp.revisions.view.frame.trigger( 'change:to' );
+
+		// Go to the revision.
+		window.wp.revisions.view.frame.model.set( {
+			to: window.wp.revisions.view.frame.model.revisions.get( revisionID ),
+			from: window.wp.revisions.view.frame.model.revisions.get( revisionID-1 )
+		} );
 	}
 
 </script>
