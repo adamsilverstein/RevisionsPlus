@@ -3,8 +3,8 @@
 Contributors: adamsilverstein
 -Tags: admin revisions
 -Requires at least: 3.6
--Tested up to: 3.6
--Stable tag: 0.9
+-Tested up to: 4.8
+-Stable tag: 1.0.0
 -License: GPLv2 or later
 -License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,6 +34,9 @@ Unininstalling and deleting the plugin will remove all of its settings.
 Yes! I think so!
 
 == Upgrade Notice ==
+
+= 1.0.0 =
+Upgrade and patch for 4.8.
 
 = 0.9 =
 * initial release.
